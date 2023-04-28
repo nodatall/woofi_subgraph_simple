@@ -1,0 +1,28 @@
+specVersion: 0.0.2
+description: fi.woo.org
+repository: https://github.com/nodatall/woofi_subgraph_simple
+schema:
+  file: ./schema.graphql
+dataSources:
+  - kind: ethereum/contract
+  name: WooPPV2_2
+  network: bsc
+  source:
+    address: "0x59dE3B49314Bf5067719364A2Cb43e8525ab93FA"
+    abi: WooPPV2
+    startBlock: 27021973
+  mapping:
+    kind: ethereum/events
+    apiVersion: 0.0.4
+    language: wasm/assemblyscript
+    entities:
+      - WooSwap
+    abis:
+      - name: WooPPV2
+        file: ../abis/WooPPV2_1.json
+      - name: ERC20
+        file: ../abis/ERC20.json
+    eventHandlers:
+      - event: WooSwap(indexed address,indexed address,uint256,uint256,address,indexed address,address,uint256,uint256)
+        handler: handleWooPPV2WooSwap_2
+    file: ../src/mappings/wooPP/wooPP.ts

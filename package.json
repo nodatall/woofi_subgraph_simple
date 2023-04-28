@@ -1,0 +1,18 @@
+{
+  "name": "woofi_subgraph_simple",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "subgraph-bsc:codegen": "graph codegen subgraph-bsc/subgraph.yaml",
+    "subgraph-bsc:build": "graph build subgraph-bsc/subgraph.yaml",
+    "subgraph-bsc:deploy": "...deployment command for subgraph-bsc..."
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@graphprotocol/graph-cli": "^0.48.0",
+    "@graphprotocol/graph-ts": "^0.29.3"
+  }
+}
